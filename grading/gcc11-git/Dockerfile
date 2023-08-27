@@ -16,3 +16,11 @@ ENV    INFOPATH=/opt/rh/gcc-toolset-11/root/usr/share/info${INFOPATH:+:${INFOPAT
 ENV    PCP_DIR=/opt/rh/gcc-toolset-11/root
 ENV    LD_LIBRARY_PATH=/opt/rh/gcc-toolset-11/root/usr/lib64:/opt/rh/gcc-toolset-11/root/usr/lib:/opt/rh/gcc-toolset-11/root/usr/lib64/dyninst:/opt/rh/gcc-toolset-11/root/usr/lib/dyninst:/opt/rh/gcc-toolset-11/root/usr/lib64:/opt/rh/gcc-toolset-11/root/usr/lib${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
 ENV    PKG_CONFIG_PATH=/opt/rh/gcc-toolset-11/root/usr/lib64/pkgconfig${PKG_CONFIG_PATH:+:${PKG_CONFIG_PATH}}
+
+# Install Devtools
+
+RUN yum group install -y "Development Tools"
+
+# Install VIM/VIMDIFF
+
+RUN yum install -y vim-enhanced
