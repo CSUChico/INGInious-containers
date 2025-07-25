@@ -2,7 +2,8 @@
 
 # Inherit from the base container, which have all the needed script to launch tasks
 ARG   VERSION=latest
-FROM  ingi/inginious-c-base:${VERSION}
+FROM ghcr.io/inginious/env-base:v0.9.1
+# FROM  ingi/inginious-c-base:${VERSION}
 LABEL org.inginious.grading.name="gcc11"
 
 # Install GCC Toolset 11
@@ -19,7 +20,7 @@ ENV    PKG_CONFIG_PATH=/opt/rh/gcc-toolset-11/root/usr/lib64/pkgconfig${PKG_CONF
 
 # Install Devtools
 
-RUN yum group install -y "Development Tools"
+# RUN yum group install -y "Development Tools"
 
 # Install VIM/VIMDIFF
 
